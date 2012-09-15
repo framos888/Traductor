@@ -10,14 +10,13 @@ try{
     $del = $_REQUEST['de'];
     $al = $_REQUEST['a'];
     $texto = $_REQUEST['miTexto'];
+	
     if($del == '' || $al == ''){$del='es';$al='es';$texto='Escriba un texto en el recuadro...';}
     $cadena = 'text=' . urlencode($texto) . '&from=' . $del . '&to=' . $al;
     $homepage = file_get_contents('http://api.microsofttranslator.com/v2/Http.svc/Translate?appId=F8766D9B5F4F9DBFB7B1D275A54BE18823896BFF&'. $cadena . '&contentType=text/html');
     $homepage = str_replace('<string xmlns="http://schemas.microsoft.com/2003/10/Serialization/">'," ",$homepage); 
     $homepage = str_replace('</string>'," ",$homepage);
     $homepage = str_replace('<?xml version="1.0"?>'," ",$homepage);
- } catch (Exception $e) {
- }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -27,7 +26,7 @@ try{
 </head>
 <html>
 <body>
-<form name="mainForm" method="post" action="default.php">
+<form name="mainForm" method="post" action="index.php">
   <table width="100%" height="38%">
     <tr> 
       <td height="24" colspan="11" bordercolor="#0033CC" bgcolor="#999999">&nbsp;</td>
@@ -82,5 +81,10 @@ try{
   <br>
   <br>
 </form>
+<?php
+ } catch (Exception $e) {
+ }
+
+?>
 </body>
 </html>
