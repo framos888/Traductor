@@ -6,7 +6,7 @@ if(preg_match('/android.+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|f
 /// header('Location: http://traductordigital.site50.net/pc.php');
 
 }
-
+try{
     $del = $_REQUEST['de'];
     $al = $_REQUEST['a'];
     $texto = $_REQUEST['miTexto'];
@@ -16,7 +16,8 @@ if(preg_match('/android.+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|f
     $homepage = str_replace('<string xmlns="http://schemas.microsoft.com/2003/10/Serialization/">'," ",$homepage); 
     $homepage = str_replace('</string>'," ",$homepage);
     $homepage = str_replace('<?xml version="1.0"?>'," ",$homepage);
- 
+ } catch (Exception $e) {
+ }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -29,7 +30,7 @@ if(preg_match('/android.+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|f
 <form name="mainForm" method="post" action="default.php">
   <table width="100%" height="38%">
     <tr> 
-      <td height="24" colspan="11" bordercolor="#0033CC" bgcolor="#999999"><strong>CASA HOGAR DE NIÑAS</strong></td>
+      <td height="24" colspan="11" bordercolor="#0033CC" bgcolor="#999999">&nbsp;</td>
     </tr>
     <tr> 
       <td colspan="13"><div id="translationResult"> 
